@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blackjack Rules - PlayCord</title>
+    <style>
+        body { font-family: sans-serif; max-width: 800px; margin: 0 auto; padding: 2em; background-color: #36393f; color: #dcddde; line-height: 1.65; }
+        h1, h2 { color: #ffffff; }
+        a { color: #5865F2; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        .content { background: #2f3136; padding: 20px; border-radius: 8px; margin-top: 20px; }
+        ul, ol { padding-left: 1.2em; }
+        code { background: #202225; padding: 2px 6px; border-radius: 4px; }
+    </style>
+</head>
+<body>
+    <a href="/learn/">&larr; Back to Game Guides</a>
+    <h1>Blackjack</h1>
+    <div class="content">
+        <h2>Objective</h2>
+        <p>Finish with a hand value closer to 21 than the dealer without going over 21.</p>
+
+        <h2>Card Values</h2>
+        <ul>
+            <li>Number cards count as face value.</li>
+            <li>Face cards count as 10.</li>
+            <li>Aces count as 1 or 11, whichever is better for the hand.</li>
+        </ul>
+
+        <h2>Turn Flow</h2>
+        <ol>
+            <li>Players receive initial cards, dealer receives a visible card and a hidden card.</li>
+            <li>Choose actions such as <code>hit</code> or <code>stand</code> (and optional actions if enabled).</li>
+            <li>If your total exceeds 21, you bust and lose that hand.</li>
+            <li>After all players act, dealer draws by house rules (commonly until 17+).</li>
+        </ol>
+
+        <h2>Win Condition</h2>
+        <ul>
+            <li>Beat the dealer total without busting.</li>
+            <li>Dealer bust means remaining players win.</li>
+            <li>Equal totals are a push unless custom rules override.</li>
+        </ul>
+
+        <h2>Strategy Tips</h2>
+        <ul>
+            <li>Avoid hitting hard totals 17+ in standard rules.</li>
+            <li>Use dealer up-card strength to guide risk.</li>
+            <li>Treat soft hands (with an Ace) differently from hard hands.</li>
+        </ul>
+    </div>
+</body>
+</html>

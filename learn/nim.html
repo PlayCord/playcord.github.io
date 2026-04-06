@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nim Rules - PlayCord</title>
+    <style>
+        body { font-family: sans-serif; max-width: 800px; margin: 0 auto; padding: 2em; background-color: #36393f; color: #dcddde; line-height: 1.65; }
+        h1, h2 { color: #ffffff; }
+        a { color: #5865F2; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        .content { background: #2f3136; padding: 20px; border-radius: 8px; margin-top: 20px; }
+        ul, ol { padding-left: 1.2em; }
+        code { background: #202225; padding: 2px 6px; border-radius: 4px; }
+    </style>
+</head>
+<body>
+    <a href="/learn/">&larr; Back to Game Guides</a>
+    <h1>Nim</h1>
+    <div class="content">
+        <h2>Objective</h2>
+        <p>Force your opponent into the losing final move in the configured Nim variant.</p>
+
+        <h2>Setup</h2>
+        <ul>
+            <li>2 players.</li>
+            <li>One or more piles of objects are displayed.</li>
+        </ul>
+
+        <h2>Turn Flow</h2>
+        <ol>
+            <li>Choose exactly one pile.</li>
+            <li>Remove one or more objects from that pile.</li>
+            <li>Turn passes to the other player.</li>
+        </ol>
+
+        <h2>End Condition</h2>
+        <p>When all piles are empty, winner is decided by the mode your server uses:</p>
+        <ul>
+            <li><strong>Normal play:</strong> player taking the last object wins.</li>
+            <li><strong>Misere play:</strong> player taking the last object loses.</li>
+        </ul>
+
+        <h2>Strategy Tip</h2>
+        <p>In normal play, aim to leave a zero <code>nim-sum</code> after each move.</p>
+    </div>
+</body>
+</html>
