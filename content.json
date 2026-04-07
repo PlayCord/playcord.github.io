@@ -1,0 +1,21 @@
+{
+  "title": "PlayCord",
+  "version": "0.4.0",
+  "subtitle": "Turn-based games, on Discord",
+  "pfp": "pfp.jpg",
+  "top_buttons": [
+    { "text": "Invite to Server", "href": "https://discord.com/oauth2/authorize?client_id=1299404261070737498" },
+    { "text": "API Docs", "href": "api" }
+  ],
+  "description": [
+    "PlayCord aims to bring classic turn-based and paper-and-pencil games to Discord without the need for Discord's feature Activities. We do this by providing a simple, extensible Python API that abstracts complexity away, complete with server-side match state management and high-quality SVG rendering for game boards.",
+    "To prevent chat clutter, PlayCord creates an interactive, private thread for each active match. All you have to do is use Dicord's intuitive slash commands and button-based gameplay with emoji support to take your turns.",
+    "Games track your matchmaking rating using the <span class=\"text-slate-800\">TrueSkill system</span>, the same algorithm used in top competitive titles, which ensures fair matchmaking across different Discord servers! You can climb global and server leaderboards, replay games via <code class=\"bg-slate-100 text-[#5865F2] px-1.5 py-0.5 text-sm\">/playcord replay</code>, or review your past games via <code class=\"bg-slate-100 text-[#5865F2] px-1.5 py-0.5 text-sm\">/playcord history</code>."
+  ],
+  "explore": [
+    { "title": "Roadmap (TBA)", "subtitle": "", "href": "https://github.com/orgs/PlayCord/projects/2/" },
+    { "title": "Current Games", "subtitle": "", "href": "https://github.com/orgs/PlayCord/projects/1/" },
+    { "title": "Developer", "subtitle": "@quantumbagel", "href": "https://github.com/quantumbagel" }
+  ]
+}
+

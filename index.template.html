@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>$TITLE $VERSION</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            /* Softer grid background effect */
+            background-color: #f8fafc;
+            background-image:
+                linear-gradient(to right, #e2e8f0 1px, transparent 1px),
+                linear-gradient(to bottom, #e2e8f0 1px, transparent 1px);
+            background-size: 40px 40px;
+            background-position: center top;
+        }
+    </style>
+</head>
+<body class="min-h-screen text-slate-700 font-sans antialiased flex flex-col items-center py-16 px-4 relative overflow-x-hidden">
+
+    <!-- Ambient background glow -->
+    <div class="absolute top-20 left-1/2 -translate-x-1/2 w-96 h-96 bg-[#7289da] blur-[120px] opacity-20 -z-10 pointer-events-none"></div>
+
+    <!-- Logo / Icon -->
+    <div class="bg-gradient-to-br from-[#7289da] to-[#5865F2] w-28 h-28 flex items-center justify-center mb-6 shadow-xl shadow-[#7289da]/30 transform hover:scale-105 transition-transform duration-300 overflow-hidden rounded-lg">
+        <img src="$PFP" alt="$TITLE profile" class="w-full h-full object-cover">
+    </div>
+
+    <!-- Main Heading -->
+    <div class="flex flex-wrap items-baseline justify-center gap-3 mb-2">
+        <h1 class="text-5xl font-normal text-transparent bg-clip-text bg-gradient-to-r from-[#5865F2] to-[#75a3ff]">$TITLE</h1>
+        <span class="text-5xl font-normal text-slate-800 bg-slate-200/60 px-3 py-1">$VERSION</span>
+    </div>
+
+    <!-- Subtitle -->
+    <p class="italic text-slate-500 mb-10 text-[17px]">$SUBTITLE</p>
+
+    <!-- Top Action Buttons -->
+    <div class="flex flex-col sm:flex-row gap-4 mb-12">
+        <!--INJECT:TOP_BUTTONS-->
+    </div>
+
+    <!-- Main Content Box -->
+    <div class="bg-white/80 backdrop-blur-xl border border-slate-200 shadow-2xl shadow-slate-200/50 p-8 sm:p-10 max-w-[750px] w-full text-center space-y-6 text-[16px] leading-relaxed mb-12 text-slate-600">
+        <!--INJECT:DESCRIPTION-->
+    </div>
+
+    <!-- Additional Links Box -->
+    <div class="max-w-[750px] w-full flex flex-col items-center">
+        <p class="mb-5 text-[15px] text-slate-500">Explore More</p>
+
+        <div class="flex flex-col sm:flex-row gap-4 w-full justify-center">
+            <!--INJECT:EXPLORE_ITEMS-->
+        </div>
+    </div>
+
+</body>
+</html>
+

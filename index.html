@@ -3,76 +3,87 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PlayCord - The Discord Bot for Games</title>
-    <link rel="stylesheet" href="/assets/css/site.css">
+    <title>PlayCord 0.4.0</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            /* Softer grid background effect */
+            background-color: #f8fafc;
+            background-image:
+                linear-gradient(to right, #e2e8f0 1px, transparent 1px),
+                linear-gradient(to bottom, #e2e8f0 1px, transparent 1px);
+            background-size: 40px 40px;
+            background-position: center top;
+        }
+    </style>
 </head>
-<body>
-    <img src="pfp.jpg" alt="PlayCord Logo" class="logo-image">
-    <h1>PlayCord</h1>
-    <p class="subtitle">The ultimate Discord bot to play board games, card games, and more directly on your server.</p>
+<body class="min-h-screen text-slate-700 font-sans antialiased flex flex-col items-center py-16 px-4 relative overflow-x-hidden">
 
-    <div class="buttons">
-        <a href="/invite/" class="btn">Invite PlayCord</a>
-        <a href="/api/" class="btn btn-outline">Developer API Docs</a>
-        <a href="https://github.com/quantumbagel/playcord" class="btn btn-outline">GitHub Code</a>
+    <!-- Ambient background glow -->
+    <div class="absolute top-20 left-1/2 -translate-x-1/2 w-96 h-96 bg-[#7289da] blur-[120px] opacity-20 -z-10 pointer-events-none"></div>
+
+    <!-- Logo / Icon -->
+    <div class="bg-gradient-to-br from-[#7289da] to-[#5865F2] w-28 h-28 flex items-center justify-center mb-6 shadow-xl shadow-[#7289da]/30 transform hover:scale-105 transition-transform duration-300 overflow-hidden rounded-lg">
+        <img src="pfp.jpg" alt="PlayCord profile" class="w-full h-full object-cover">
     </div>
 
-    <p class="repo-line">
-        <a href="https://github.com/quantumbagel/playcord">quantumbagel/playcord</a>
-        <img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/quantumbagel/playcord?style=social">
-    </p>
-
-    <div class="card">
-        <h2>How It Works</h2>
-        <p>PlayCord creates an interactive Thread for each active match to prevent chat clutter while you play. Players simply use Discord's intuitive Slash Commands or UI Buttons (depending on the game) to interact, take their turns, and strategize.</p>
-        <p>Games track your matchmaking rating using the TrueSkill rating system, maintaining fair competition across servers! For more information on matches, you can even check out replay logs via <code>/playcord replay</code> or review histories via <code>/playcord history</code>.</p>
+    <!-- Main Heading -->
+    <div class="flex flex-wrap items-baseline justify-center gap-3 mb-2">
+        <h1 class="text-5xl font-normal text-transparent bg-clip-text bg-gradient-to-r from-[#5865F2] to-[#75a3ff]">PlayCord</h1>
+        <span class="text-5xl font-normal text-slate-800 bg-slate-200/60 px-3 py-1">0.4.0</span>
     </div>
 
-    <h2>Features</h2>
-    <div class="feature-grid">
-        <div class="card" style="margin-bottom: 0;">
-            <h3>Vast Game Library</h3>
-            <p>Play classic games right in Discord with dedicated UI, from logic games to card mechanics correctly integrated.</p>
+    <!-- Subtitle -->
+    <p class="italic text-slate-500 mb-10 text-[17px]">Turn-based games, on Discord</p>
+
+    <!-- Top Action Buttons -->
+    <div class="flex flex-col sm:flex-row gap-4 mb-12">
+        <button onclick="location.href='#invite'" class="flex items-center justify-center gap-2 bg-[#5865F2] text-white px-10 py-3.5 shadow-lg shadow-[#5865F2]/20 hover:-translate-y-1 hover:shadow-xl hover:bg-[#4752c4] transition-all duration-200">Invite to Server</button>
+        <button onclick="location.href='#docs'" class="flex items-center justify-center gap-2 bg-[#5865F2] text-white px-10 py-3.5 shadow-lg shadow-[#5865F2]/20 hover:-translate-y-1 hover:shadow-xl hover:bg-[#4752c4] transition-all duration-200">API Docs</button>
+    </div>
+
+    <!-- Main Content Box -->
+    <div class="bg-white/80 backdrop-blur-xl border border-slate-200 shadow-2xl shadow-slate-200/50 p-8 sm:p-10 max-w-[750px] w-full text-center space-y-6 text-[16px] leading-relaxed mb-12 text-slate-600">
+        <p>
+            PlayCord aims to bring classic turn-based and paper-and-pencil games to Discord without the need for Discord's feature Activities. We do this by providing a simple, extensible Python API that abstracts complexity away, complete with server-side match state management and high-quality SVG rendering for game boards.
+        </p>
+        <p>
+            To prevent chat clutter, PlayCord creates an interactive, private thread for each active match. All you have to do is use Dicord's intuitive slash commands and button-based gameplay with emoji support to take your turns.
+        </p>
+        <p>
+            Games track your matchmaking rating using the <span class="text-slate-800">TrueSkill system</span>, the same algorithm used in top competitive titles, which ensures fair matchmaking across different Discord servers! You can climb global and server leaderboards, replay games via <code class="bg-slate-100 text-[#5865F2] px-1.5 py-0.5 text-sm">/playcord replay</code>, or review your past games via <code class="bg-slate-100 text-[#5865F2] px-1.5 py-0.5 text-sm">/playcord history</code>.
+        </p>
+    </div>
+
+    <!-- Additional Links Box -->
+    <div class="max-w-[750px] w-full flex flex-col items-center">
+        <p class="mb-5 text-[15px] text-slate-500">Explore More</p>
+
+        <div class="flex flex-col sm:flex-row gap-4 w-full justify-center">
+            <button onclick="location.href='https://github.com/orgs/PlayCord/projects/2/'" class="group bg-white border border-slate-200 flex-1 py-4 px-6 shadow-sm hover:shadow-md hover:border-[#5865F2]/50 transition-all duration-200 flex items-center justify-between">
+                <div class="flex flex-col text-left">
+                    <span class="text-slate-700 group-hover:text-[#5865F2] transition-colors">Roadmap (TBA)</span>
+                    
+                </div>
+                <svg class="text-slate-400 group-hover:text-[#5865F2] transition-colors" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </button>
+            <button onclick="location.href='https://github.com/orgs/PlayCord/projects/1/'" class="group bg-white border border-slate-200 flex-1 py-4 px-6 shadow-sm hover:shadow-md hover:border-[#5865F2]/50 transition-all duration-200 flex items-center justify-between">
+                <div class="flex flex-col text-left">
+                    <span class="text-slate-700 group-hover:text-[#5865F2] transition-colors">Current Games</span>
+                    
+                </div>
+                <svg class="text-slate-400 group-hover:text-[#5865F2] transition-colors" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </button>
+            <button onclick="location.href='https://github.com/quantumbagel'" class="group bg-white border border-slate-200 flex-1 py-4 px-6 shadow-sm hover:shadow-md hover:border-[#5865F2]/50 transition-all duration-200 flex items-center justify-between">
+                <div class="flex flex-col text-left">
+                    <span class="text-slate-700 group-hover:text-[#5865F2] transition-colors">Developer</span>
+                    <span class="text-xs text-slate-500">@quantumbagel</span>
+                </div>
+                <svg class="text-slate-400 group-hover:text-[#5865F2] transition-colors" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </button>
         </div>
-        <div class="card" style="margin-bottom: 0;">
-            <h3>Global Leaderboards</h3>
-            <p>Every match calculates your TrueSkill rating, ranking you globally or per-server with built-in matchmaking.</p>
-        </div>
-        <div class="card" style="margin-bottom: 0;">
-            <h3>Match Replays</h3>
-            <p>A replay event log is recorded for most games with stochastic elements and logic, enabling playback after via slash commands.</p>
-        </div>
-        <div class="card" style="margin-bottom: 0;">
-            <h3>Developer Friendly</h3>
-            <p>PlayCord is built on an extensible API, meaning custom games and frameworks can easily be written. A full web API documentation is available.</p>
-        </div>
     </div>
 
-    <div class="card">
-        <h2>Available Games</h2>
-        <ul class="games-list">
-            <li><a href="/learn/battleship.html" class="game-link">Battleship</a></li>
-            <li><a href="/learn/blackjack.html" class="game-link">Blackjack</a></li>
-            <li><a href="/learn/chess.html" class="game-link">Chess</a></li>
-            <li><a href="/learn/connect-four.html" class="game-link">Connect Four</a></li>
-            <li><a href="/learn/liars-dice.html" class="game-link">Liar's Dice</a></li>
-            <li><a href="/learn/mastermind.html" class="game-link">Mastermind</a></li>
-            <li><a href="/learn/nim.html" class="game-link">Nim</a></li>
-            <li><a href="/learn/no-thanks.html" class="game-link">No Thanks!</a></li>
-            <li><a href="/learn/poker.html" class="game-link">Poker</a></li>
-            <li><a href="/learn/reversi.html" class="game-link">Reversi</a></li>
-            <li><a href="/learn/tic-tac-toe.html" class="game-link">Tic-Tac-Toe</a></li>
-        </ul>
-    </div>
-
-    <div class="footer">
-        <ul class="footer-links">
-            <li><a href="/learn/">Game Guides</a></li>
-            <li><a href="/api/">API Documentation</a></li>
-            <li><a href="/privacy-policy/">Privacy Policy</a></li>
-            <li><a href="/terms-of-service/">Terms of Service</a></li>
-        </ul>
-        <p class="copyright">&copy; 2026 PlayCord</p>
-    </div>
 </body>
 </html>
+
