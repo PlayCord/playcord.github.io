@@ -93,6 +93,7 @@
 </div>
     </nav>
     <main class="pdoc">
+            <p id="playcord-home-link"><a href="/">Back to PlayCord Home</a></p>
             <section class="module-info">
                     <h1 class="modulename">
 <a href="./../api.html">api</a><wbr>.Response    </h1>
@@ -203,163 +204,6 @@
 </span><span id="L-99"><a href="#L-99"><span class="linenos"> 99</span></a>        <span class="n">game_id</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
 </span><span id="L-100"><a href="#L-100"><span class="linenos">100</span></a>    <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="n">Awaitable</span><span class="p">[</span><span class="n">Any</span><span class="p">],</span> <span class="n">Callable</span><span class="p">[[</span><span class="n">Any</span><span class="p">],</span> <span class="n">Awaitable</span><span class="p">[</span><span class="n">Any</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span><span class="p">]]:</span>
 </span><span id="L-101"><a href="#L-101"><span class="linenos">101</span></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">generate_message</span><span class="p">(</span><span class="n">message_send_function</span><span class="p">,</span> <span class="n">game_id</span><span class="p">)</span>
-</span></pre></div>
-
-
-            </section>
-                <section id="ResponseType">
-                            <input id="ResponseType-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
-<div class="attr class">
-            
-    <span class="def">class</span>
-    <span class="name">ResponseType</span><wbr>(<span class="base">enum.Enum</span>):
-
-                <label class="view-source-button" for="ResponseType-view-source"><span>View Source</span></label>
-
-    </div>
-    <a class="headerlink" href="#ResponseType"></a>
-            <div class="pdoc-code codehilite"><pre><span></span><span id="ResponseType-12"><a href="#ResponseType-12"><span class="linenos">12</span></a><span class="k">class</span><span class="w"> </span><span class="nc">ResponseType</span><span class="p">(</span><span class="n">Enum</span><span class="p">):</span>
-</span><span id="ResponseType-13"><a href="#ResponseType-13"><span class="linenos">13</span></a>    <span class="n">normal</span> <span class="o">=</span> <span class="mi">0</span>
-</span><span id="ResponseType-14"><a href="#ResponseType-14"><span class="linenos">14</span></a>    <span class="n">info</span> <span class="o">=</span> <span class="mi">1</span>
-</span><span id="ResponseType-15"><a href="#ResponseType-15"><span class="linenos">15</span></a>    <span class="n">error</span> <span class="o">=</span> <span class="mi">2</span>
-</span></pre></div>
-
-
-    
-
-                            <div id="ResponseType.normal" class="classattr">
-                                <div class="attr variable">
-            <span class="name">normal</span>        =
-<span class="default_value">&lt;<a href="#ResponseType.normal">ResponseType.normal</a>: 0&gt;</span>
-
-        
-    </div>
-    <a class="headerlink" href="#ResponseType.normal"></a>
-    
-    
-
-                            </div>
-                            <div id="ResponseType.info" class="classattr">
-                                <div class="attr variable">
-            <span class="name">info</span>        =
-<span class="default_value">&lt;<a href="#ResponseType.info">ResponseType.info</a>: 1&gt;</span>
-
-        
-    </div>
-    <a class="headerlink" href="#ResponseType.info"></a>
-    
-    
-
-                            </div>
-                            <div id="ResponseType.error" class="classattr">
-                                <div class="attr variable">
-            <span class="name">error</span>        =
-<span class="default_value">&lt;<a href="#ResponseType.error">ResponseType.error</a>: 2&gt;</span>
-
-        
-    </div>
-    <a class="headerlink" href="#ResponseType.error"></a>
-    
-    
-
-                            </div>
-                </section>
-                <section id="Response">
-                            <input id="Response-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
-<div class="attr class">
-            
-    <span class="def">class</span>
-    <span class="name">Response</span>:
-
-                <label class="view-source-button" for="Response-view-source"><span>View Source</span></label>
-
-    </div>
-    <a class="headerlink" href="#Response"></a>
-            <div class="pdoc-code codehilite"><pre><span></span><span id="Response-18"><a href="#Response-18"><span class="linenos"> 18</span></a><span class="k">class</span><span class="w"> </span><span class="nc">Response</span><span class="p">:</span>
-</span><span id="Response-19"><a href="#Response-19"><span class="linenos"> 19</span></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="Response-20"><a href="#Response-20"><span class="linenos"> 20</span></a><span class="sd">    Response: handler for command responses</span>
-</span><span id="Response-21"><a href="#Response-21"><span class="linenos"> 21</span></a><span class="sd">    &quot;&quot;&quot;</span>
-</span><span id="Response-22"><a href="#Response-22"><span class="linenos"> 22</span></a>
-</span><span id="Response-23"><a href="#Response-23"><span class="linenos"> 23</span></a>    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
-</span><span id="Response-24"><a href="#Response-24"><span class="linenos"> 24</span></a>        <span class="bp">self</span><span class="p">,</span>
-</span><span id="Response-25"><a href="#Response-25"><span class="linenos"> 25</span></a>        <span class="n">message</span><span class="p">:</span> <span class="n">Message</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
-</span><span id="Response-26"><a href="#Response-26"><span class="linenos"> 26</span></a>        <span class="n">content</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
-</span><span id="Response-27"><a href="#Response-27"><span class="linenos"> 27</span></a>        <span class="n">style</span><span class="p">:</span> <span class="n">ResponseType</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
-</span><span id="Response-28"><a href="#Response-28"><span class="linenos"> 28</span></a>        <span class="n">ephemeral</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
-</span><span id="Response-29"><a href="#Response-29"><span class="linenos"> 29</span></a>        <span class="n">delete_after</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
-</span><span id="Response-30"><a href="#Response-30"><span class="linenos"> 30</span></a>        <span class="o">*</span><span class="p">,</span>
-</span><span id="Response-31"><a href="#Response-31"><span class="linenos"> 31</span></a>        <span class="n">record_replay</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
-</span><span id="Response-32"><a href="#Response-32"><span class="linenos"> 32</span></a>    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-</span><span id="Response-33"><a href="#Response-33"><span class="linenos"> 33</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="Response-34"><a href="#Response-34"><span class="linenos"> 34</span></a><span class="sd">        Create a new Response object.</span>
-</span><span id="Response-35"><a href="#Response-35"><span class="linenos"> 35</span></a><span class="sd">        :param components: list of MessageComponent objects to put in the response</span>
-</span><span id="Response-36"><a href="#Response-36"><span class="linenos"> 36</span></a><span class="sd">        :param content: plain text content of the response, outside of both the embed and view</span>
-</span><span id="Response-37"><a href="#Response-37"><span class="linenos"> 37</span></a><span class="sd">        :param style: the style of the embed (normal, info, error)</span>
-</span><span id="Response-38"><a href="#Response-38"><span class="linenos"> 38</span></a><span class="sd">        :param ephemeral: whether or not the embed is invisible to everyone but who called the callback</span>
-</span><span id="Response-39"><a href="#Response-39"><span class="linenos"> 39</span></a><span class="sd">        :param delete_after: after how long to delete the message after it is sent</span>
-</span><span id="Response-40"><a href="#Response-40"><span class="linenos"> 40</span></a><span class="sd">        :param record_replay: if True, this callback still counts as a game-affecting move for replay/DB when</span>
-</span><span id="Response-41"><a href="#Response-41"><span class="linenos"> 41</span></a><span class="sd">            the handler returned a Response (normally only ``None`` means the move applied).</span>
-</span><span id="Response-42"><a href="#Response-42"><span class="linenos"> 42</span></a><span class="sd">        &quot;&quot;&quot;</span>
-</span><span id="Response-43"><a href="#Response-43"><span class="linenos"> 43</span></a>
-</span><span id="Response-44"><a href="#Response-44"><span class="linenos"> 44</span></a>        <span class="k">if</span> <span class="n">style</span> <span class="o">==</span> <span class="n">ResponseType</span><span class="o">.</span><span class="n">normal</span><span class="p">:</span>
-</span><span id="Response-45"><a href="#Response-45"><span class="linenos"> 45</span></a>            <span class="n">color</span> <span class="o">=</span> <span class="n">EMBED_COLOR</span>
-</span><span id="Response-46"><a href="#Response-46"><span class="linenos"> 46</span></a>        <span class="k">elif</span> <span class="n">style</span> <span class="o">==</span> <span class="n">ResponseType</span><span class="o">.</span><span class="n">info</span><span class="p">:</span>
-</span><span id="Response-47"><a href="#Response-47"><span class="linenos"> 47</span></a>            <span class="n">color</span> <span class="o">=</span> <span class="n">INFO_COLOR</span>
-</span><span id="Response-48"><a href="#Response-48"><span class="linenos"> 48</span></a>        <span class="k">elif</span> <span class="n">style</span> <span class="o">==</span> <span class="n">ResponseType</span><span class="o">.</span><span class="n">error</span><span class="p">:</span>
-</span><span id="Response-49"><a href="#Response-49"><span class="linenos"> 49</span></a>            <span class="n">color</span> <span class="o">=</span> <span class="n">ERROR_COLOR</span>
-</span><span id="Response-50"><a href="#Response-50"><span class="linenos"> 50</span></a>        <span class="k">else</span><span class="p">:</span>
-</span><span id="Response-51"><a href="#Response-51"><span class="linenos"> 51</span></a>            <span class="n">color</span> <span class="o">=</span> <span class="n">EMBED_COLOR</span>  <span class="c1"># Default color</span>
-</span><span id="Response-52"><a href="#Response-52"><span class="linenos"> 52</span></a>
-</span><span id="Response-53"><a href="#Response-53"><span class="linenos"> 53</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">style</span> <span class="o">=</span> <span class="n">style</span> <span class="ow">or</span> <span class="n">ResponseType</span><span class="o">.</span><span class="n">normal</span>
-</span><span id="Response-54"><a href="#Response-54"><span class="linenos"> 54</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">color</span> <span class="o">=</span> <span class="n">color</span>
-</span><span id="Response-55"><a href="#Response-55"><span class="linenos"> 55</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">content</span> <span class="o">=</span> <span class="n">content</span>
-</span><span id="Response-56"><a href="#Response-56"><span class="linenos"> 56</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">message</span> <span class="o">=</span> <span class="n">message</span>
-</span><span id="Response-57"><a href="#Response-57"><span class="linenos"> 57</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">ephemeral</span> <span class="o">=</span> <span class="n">ephemeral</span>
-</span><span id="Response-58"><a href="#Response-58"><span class="linenos"> 58</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">delete_after</span> <span class="o">=</span> <span class="n">delete_after</span>
-</span><span id="Response-59"><a href="#Response-59"><span class="linenos"> 59</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">record_replay</span> <span class="o">=</span> <span class="n">record_replay</span>
-</span><span id="Response-60"><a href="#Response-60"><span class="linenos"> 60</span></a>
-</span><span id="Response-61"><a href="#Response-61"><span class="linenos"> 61</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">_styled_message</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Message</span> <span class="o">|</span> <span class="kc">None</span><span class="p">:</span>
-</span><span id="Response-62"><a href="#Response-62"><span class="linenos"> 62</span></a>        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">message</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-</span><span id="Response-63"><a href="#Response-63"><span class="linenos"> 63</span></a>            <span class="k">return</span> <span class="kc">None</span>
-</span><span id="Response-64"><a href="#Response-64"><span class="linenos"> 64</span></a>        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">style</span> <span class="o">==</span> <span class="n">ResponseType</span><span class="o">.</span><span class="n">normal</span><span class="p">:</span>
-</span><span id="Response-65"><a href="#Response-65"><span class="linenos"> 65</span></a>            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">message</span>
-</span><span id="Response-66"><a href="#Response-66"><span class="linenos"> 66</span></a>        <span class="k">return</span> <span class="n">Message</span><span class="p">(</span><span class="n">Container</span><span class="p">(</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">children</span><span class="p">,</span> <span class="n">accent_color</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">color</span><span class="p">),</span> <span class="n">files</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">files</span><span class="p">)</span>
-</span><span id="Response-67"><a href="#Response-67"><span class="linenos"> 67</span></a>
-</span><span id="Response-68"><a href="#Response-68"><span class="linenos"> 68</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">generate_message</span><span class="p">(</span>
-</span><span id="Response-69"><a href="#Response-69"><span class="linenos"> 69</span></a>        <span class="bp">self</span><span class="p">,</span>
-</span><span id="Response-70"><a href="#Response-70"><span class="linenos"> 70</span></a>        <span class="n">message_send_function</span><span class="p">:</span> <span class="n">Callable</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="n">Awaitable</span><span class="p">[</span><span class="n">Any</span><span class="p">]],</span>
-</span><span id="Response-71"><a href="#Response-71"><span class="linenos"> 71</span></a>        <span class="n">game_id</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
-</span><span id="Response-72"><a href="#Response-72"><span class="linenos"> 72</span></a>        <span class="n">enable_embed_components</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
-</span><span id="Response-73"><a href="#Response-73"><span class="linenos"> 73</span></a>        <span class="n">enable_view_components</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
-</span><span id="Response-74"><a href="#Response-74"><span class="linenos"> 74</span></a>    <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="n">Awaitable</span><span class="p">[</span><span class="n">Any</span><span class="p">],</span> <span class="n">Callable</span><span class="p">[[</span><span class="n">Any</span><span class="p">],</span> <span class="n">Awaitable</span><span class="p">[</span><span class="n">Any</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span><span class="p">]]:</span>
-</span><span id="Response-75"><a href="#Response-75"><span class="linenos"> 75</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-</span><span id="Response-76"><a href="#Response-76"><span class="linenos"> 76</span></a><span class="sd">        Generate coroutines responsible for responding to the interaction</span>
-</span><span id="Response-77"><a href="#Response-77"><span class="linenos"> 77</span></a><span class="sd">        :param message_send_function: the coroutine function that will send the Response</span>
-</span><span id="Response-78"><a href="#Response-78"><span class="linenos"> 78</span></a><span class="sd">        :param game_id: Game ID the response is going to</span>
-</span><span id="Response-79"><a href="#Response-79"><span class="linenos"> 79</span></a><span class="sd">        :return: An coroutine that will send the message,</span>
-</span><span id="Response-80"><a href="#Response-80"><span class="linenos"> 80</span></a><span class="sd">         and a lambda function that takes a message and returns a coroutine to set the delete_after handler</span>
-</span><span id="Response-81"><a href="#Response-81"><span class="linenos"> 81</span></a><span class="sd">        &quot;&quot;&quot;</span>
-</span><span id="Response-82"><a href="#Response-82"><span class="linenos"> 82</span></a>        <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">dummy</span><span class="p">():</span>
-</span><span id="Response-83"><a href="#Response-83"><span class="linenos"> 83</span></a>            <span class="k">return</span> <span class="kc">False</span>
-</span><span id="Response-84"><a href="#Response-84"><span class="linenos"> 84</span></a>
-</span><span id="Response-85"><a href="#Response-85"><span class="linenos"> 85</span></a>        <span class="n">payload</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;ephemeral&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">ephemeral</span><span class="p">}</span>
-</span><span id="Response-86"><a href="#Response-86"><span class="linenos"> 86</span></a>        <span class="n">styled_message</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_styled_message</span><span class="p">()</span>
-</span><span id="Response-87"><a href="#Response-87"><span class="linenos"> 87</span></a>        <span class="k">if</span> <span class="n">styled_message</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-</span><span id="Response-88"><a href="#Response-88"><span class="linenos"> 88</span></a>            <span class="n">payload</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">styled_message</span><span class="o">.</span><span class="n">to_send_kwargs</span><span class="p">(</span><span class="n">game_id</span><span class="p">,</span> <span class="n">content</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">content</span><span class="p">))</span>
-</span><span id="Response-89"><a href="#Response-89"><span class="linenos"> 89</span></a>        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">content</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-</span><span id="Response-90"><a href="#Response-90"><span class="linenos"> 90</span></a>            <span class="n">payload</span><span class="p">[</span><span class="s2">&quot;content&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">content</span>
-</span><span id="Response-91"><a href="#Response-91"><span class="linenos"> 91</span></a>        <span class="k">else</span><span class="p">:</span>
-</span><span id="Response-92"><a href="#Response-92"><span class="linenos"> 92</span></a>            <span class="k">return</span> <span class="n">dummy</span><span class="p">(),</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="kc">None</span>
-</span><span id="Response-93"><a href="#Response-93"><span class="linenos"> 93</span></a>
-</span><span id="Response-94"><a href="#Response-94"><span class="linenos"> 94</span></a>        <span class="k">return</span> <span class="p">(</span><span class="n">message_send_function</span><span class="p">(</span><span class="o">**</span><span class="n">payload</span><span class="p">),</span>
-</span><span id="Response-95"><a href="#Response-95"><span class="linenos"> 95</span></a>                <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="n">delay</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">delete_after</span><span class="p">)</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">delete_after</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="kc">None</span><span class="p">)</span>
-</span><span id="Response-96"><a href="#Response-96"><span class="linenos"> 96</span></a>
-</span><span id="Response-97"><a href="#Response-97"><span class="linenos"> 97</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">send</span><span class="p">(</span>
-</span><span id="Response-98"><a href="#Response-98"><span class="linenos"> 98</span></a>        <span class="bp">self</span><span class="p">,</span>
-</span><span id="Response-99"><a href="#Response-99"><span class="linenos"> 99</span></a>        <span class="n">message_send_function</span><span class="p">:</span> <span class="n">Callable</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="n">Awaitable</span><span class="p">[</span><span class="n">Any</span><span class="p">]],</span>
-</span><span id="Response-100"><a href="#Response-100"><span class="linenos">100</span></a>        <span class="n">game_id</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
-</span><span id="Response-101"><a href="#Response-101"><span class="linenos">101</span></a>    <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="n">Awaitable</span><span class="p">[</span><span class="n">Any</span><span class="p">],</span> <span class="n">Callable</span><span class="p">[[</span><span class="n">Any</span><span class="p">],</span> <span class="n">Awaitable</span><span class="p">[</span><span class="n">Any</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span><span class="p">]]:</span>
-</span><span id="Response-102"><a href="#Response-102"><span class="linenos">102</span></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">generate_message</span><span class="p">(</span><span class="n">message_send_function</span><span class="p">,</span> <span class="n">game_id</span><span class="p">)</span>
 </span></pre></div>
 
 
@@ -516,18 +360,10 @@ the handler returned a Response (normally only <code>None</code> means the move 
 <div class="attr function">
             
         <span class="def">def</span>
-        <span class="name">generate_message</span><span class="signature pdoc-code multiline">(<span class="param">	<span class="bp">self</span>,</span><span class="param">	<span class="n">message_send_function</span><span class="p">:</span> <span class="n">Callable</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="n">Awaitable</span><span class="p">[</span><span class="n">typing</span><span class="o">.</span><span class="n">Any</span><span class="p">]]</span>,</span><span class="param">	<span class="n">game_id</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="kc">None</span>,</span><span class="param">	<span class="n">enable_embed_components</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span>,</span><span class="param">	<span class="n">enable_view_components</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span></span><span class="return-annotation">) -> <span class="nb">tuple</span><span class="p">[</span><span class="n">Awaitable</span><span class="p">[</span><span class="n">typing</span><span class="o">.</span><span class="n">Any</span><span class="p">],</span> <span class="n">Callable</span><span class="p">[[</span><span class="n">typing</span><span class="o">.</span><span class="n">Any</span><span class="p">],</span> <span class="n">Awaitable</span><span class="p">[</span><span class="n">typing</span><span class="o">.</span><span class="n">Any</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span><span class="p">]]</span>:</span></span>
-
-                <label class="view-source-button" for="Response.generate_message-view-source"><span>View Source</span></label>
-
-    </div>
-    <a class="headerlink" href="#Response.generate_message"></a>
-            <div class="pdoc-code codehilite"><pre><span></span><span id="Response.generate_message-68"><a href="#Response.generate_message-68"><span class="linenos">68</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">generate_message</span><span class="p">(</span>
-</span><span id="Response.generate_message-69"><a href="#Response.generate_message-69"><span class="linenos">69</span></a>        <span class="bp">self</span><span class="p">,</span>
-</span><span id="Response.generate_message-70"><a href="#Response.generate_message-70"><span class="linenos">70</span></a>        <span class="n">message_send_function</span><span class="p">:</span> <span class="n">Callable</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="n">Awaitable</span><span class="p">[</span><span class="n">Any</span><span class="p">]],</span>
-</span><span id="Response.generate_message-71"><a href="#Response.generate_message-71"><span class="linenos">71</span></a>        <span class="n">game_id</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
-</span><span id="Response.generate_message-72"><a href="#Response.generate_message-72"><span class="linenos">72</span></a>        <span class="n">enable_embed_components</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
-</span><span id="Response.generate_message-73"><a href="#Response.generate_message-73"><span class="linenos">73</span></a>        <span class="n">enable_view_components</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+        <span class="name">generate_message</span><span class="signature pdoc-code multiline">(<span class="param">	<span class="bp">self</span>,</span><span class="param">	<span class="n">message_send_function</span><span class="p">:</span> <span class="n">Callable</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="n">Awaitable</span><span class="p">[</span><span class="n">Any</span><span class="p">]],</span>
+</span><span id="Response.generate_message-71"><a href="#Response.generate_message-71"><span class="linenos"> 71</span></a>        <span class="n">game_id</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+</span><span id="Response.generate_message-72"><a href="#Response.generate_message-72"><span class="linenos"> 72</span></a>        <span class="n">enable_embed_components</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+</span><span id="Response.generate_message-73"><a href="#Response.generate_message-73"><span class="linenos"> 73</span></a>        <span class="n">enable_view_components</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
 </span><span id="Response.generate_message-74"><a href="#Response.generate_message-74"><span class="linenos">74</span></a>    <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="n">Awaitable</span><span class="p">[</span><span class="n">Any</span><span class="p">],</span> <span class="n">Callable</span><span class="p">[[</span><span class="n">Any</span><span class="p">],</span> <span class="n">Awaitable</span><span class="p">[</span><span class="n">Any</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span><span class="p">]]:</span>
 </span><span id="Response.generate_message-75"><a href="#Response.generate_message-75"><span class="linenos">75</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 </span><span id="Response.generate_message-76"><a href="#Response.generate_message-76"><span class="linenos">76</span></a><span class="sd">        Generate coroutines responsible for responding to the interaction</span>
@@ -583,7 +419,7 @@ the handler returned a Response (normally only <code>None</code> means the move 
 
     </div>
     <a class="headerlink" href="#Response.send"></a>
-            <div class="pdoc-code codehilite"><pre><span></span><span id="Response.send-97"><a href="#Response.send-97"><span class="linenos"> 97</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">send</span><span class="p">(</span>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="Response.send-97"><a href="#Response.send-97"><span class="linenos"> 97</span></a><span class="k">def</span><span class="w"> </span><span class="nf">send</span><span class="p">(</span>
 </span><span id="Response.send-98"><a href="#Response.send-98"><span class="linenos"> 98</span></a>        <span class="bp">self</span><span class="p">,</span>
 </span><span id="Response.send-99"><a href="#Response.send-99"><span class="linenos"> 99</span></a>        <span class="n">message_send_function</span><span class="p">:</span> <span class="n">Callable</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="n">Awaitable</span><span class="p">[</span><span class="n">Any</span><span class="p">]],</span>
 </span><span id="Response.send-100"><a href="#Response.send-100"><span class="linenos">100</span></a>        <span class="n">game_id</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
@@ -780,3 +616,4 @@ the handler returned a Response (normally only <code>None</code> means the move 
     });
 </script></body>
 </html>
+

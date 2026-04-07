@@ -1,7 +1,17 @@
 <!doctype html>
-<html>
+<html lang="en">
 <head>
     <meta charset="utf-8">
-    <meta http-equiv="refresh" content="0; url=./api.html"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>PlayCord API</title>
+    <style>
+        html, body { margin: 0; height: 100%; }
+        iframe { border: 0; width: 100%; height: 100%; }
+        .fallback { position: fixed; top: 10px; left: 10px; z-index: 2; background: #fff; padding: 8px 10px; border-radius: 8px; }
+    </style>
 </head>
+<body>
+    <div class="fallback"><a href="/">Home</a> | <a href="./api.html">Open API directly</a></div>
+    <iframe src="./api.html" title="PlayCord API documentation"></iframe>
+</body>
 </html>

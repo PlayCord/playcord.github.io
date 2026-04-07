@@ -4,125 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PlayCord - The Discord Bot for Games</title>
-    <style>
-        :root {
-            --blurple: #5865F2;
-            --dark-blurple: #4752C4;
-            --bg-color: #36393f;
-            --bg-secondary: #2f3136;
-            --text-normal: #dcddde;
-            --text-heading: #ffffff;
-        }
-        body {
-            font-family: 'Whitney', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 40px 20px;
-            line-height: 1.6;
-            background-color: var(--bg-color);
-            color: var(--text-normal);
-        }
-        h1, h2, h3 {
-            color: var(--text-heading);
-        }
-        h1 {
-            font-size: 3em;
-            text-align: center;
-            margin-bottom: 10px;
-            color: var(--blurple);
-        }
-        .subtitle {
-            text-align: center;
-            font-size: 1.2em;
-            margin-bottom: 40px;
-            color: #b9bbbe;
-        }
-        a {
-            color: var(--blurple);
-            text-decoration: none;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
-        .buttons {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin-bottom: 50px;
-        }
-        .btn {
-            display: inline-block;
-            padding: 15px 30px;
-            background: var(--blurple);
-            color: #fff;
-            border-radius: 5px;
-            font-size: 1.1em;
-            font-weight: bold;
-            transition: background-color 0.2s;
-        }
-        .btn:hover {
-            background: var(--dark-blurple);
-            color: #fff;
-            text-decoration: none;
-        }
-        .btn-outline {
-            background: transparent;
-            border: 2px solid var(--blurple);
-            color: var(--text-heading);
-        }
-        .btn-outline:hover {
-            background: var(--blurple);
-        }
-        .card {
-            background-color: var(--bg-secondary);
-            border-radius: 8px;
-            padding: 25px;
-            margin-bottom: 25px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        }
-        .feature-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
-            margin-bottom: 40px;
-        }
-        .games-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            padding: 0;
-            list-style: none;
-        }
-        .games-list li {
-            background: #202225;
-            padding: 8px 15px;
-            border-radius: 20px;
-            font-size: 0.9em;
-        }
-        .footer {
-            margin-top: 50px;
-            text-align: center;
-            border-top: 1px solid #4f545c;
-            padding-top: 20px;
-        }
-        .footer-links {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            list-style: none;
-            padding: 0;
-        }
-    </style>
+    <link rel="stylesheet" href="/assets/css/site.css">
 </head>
 <body>
-    <img src="pfp.jpg" alt="PlayCord Logo" style="display:block; margin: 0 auto; width: 120px; border-radius: 50%; box-shadow: 0 4px 8px rgba(0,0,0,0.2);">
+    <img src="pfp.jpg" alt="PlayCord Logo" class="logo-image">
     <h1>PlayCord</h1>
     <p class="subtitle">The ultimate Discord bot to play board games, card games, and more directly on your server.</p>
 
     <div class="buttons">
         <a href="/invite/" class="btn">Invite PlayCord</a>
         <a href="/api/" class="btn btn-outline">Developer API Docs</a>
+        <a href="https://github.com/quantumbagel/playcord" class="btn btn-outline">GitHub Code</a>
     </div>
+
+    <p class="repo-line">
+        <a href="https://github.com/quantumbagel/playcord">quantumbagel/playcord</a>
+        <img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/quantumbagel/playcord?style=social">
+    </p>
 
     <div class="card">
         <h2>How It Works</h2>
@@ -153,17 +51,17 @@
     <div class="card">
         <h2>Available Games</h2>
         <ul class="games-list">
-            <li><a href="/learn/battleship.html" style="color: inherit; text-decoration: none;">Battleship</a></li>
-            <li><a href="/learn/blackjack.html" style="color: inherit; text-decoration: none;">Blackjack</a></li>
-            <li><a href="/learn/chess.html" style="color: inherit; text-decoration: none;">Chess</a></li>
-            <li><a href="/learn/connect-four.html" style="color: inherit; text-decoration: none;">Connect Four</a></li>
-            <li><a href="/learn/liars-dice.html" style="color: inherit; text-decoration: none;">Liar's Dice</a></li>
-            <li><a href="/learn/mastermind.html" style="color: inherit; text-decoration: none;">Mastermind</a></li>
-            <li><a href="/learn/nim.html" style="color: inherit; text-decoration: none;">Nim</a></li>
-            <li><a href="/learn/no-thanks.html" style="color: inherit; text-decoration: none;">No Thanks!</a></li>
-            <li><a href="/learn/poker.html" style="color: inherit; text-decoration: none;">Poker</a></li>
-            <li><a href="/learn/reversi.html" style="color: inherit; text-decoration: none;">Reversi</a></li>
-            <li><a href="/learn/tic-tac-toe.html" style="color: inherit; text-decoration: none;">Tic-Tac-Toe</a></li>
+            <li><a href="/learn/battleship.html" class="game-link">Battleship</a></li>
+            <li><a href="/learn/blackjack.html" class="game-link">Blackjack</a></li>
+            <li><a href="/learn/chess.html" class="game-link">Chess</a></li>
+            <li><a href="/learn/connect-four.html" class="game-link">Connect Four</a></li>
+            <li><a href="/learn/liars-dice.html" class="game-link">Liar's Dice</a></li>
+            <li><a href="/learn/mastermind.html" class="game-link">Mastermind</a></li>
+            <li><a href="/learn/nim.html" class="game-link">Nim</a></li>
+            <li><a href="/learn/no-thanks.html" class="game-link">No Thanks!</a></li>
+            <li><a href="/learn/poker.html" class="game-link">Poker</a></li>
+            <li><a href="/learn/reversi.html" class="game-link">Reversi</a></li>
+            <li><a href="/learn/tic-tac-toe.html" class="game-link">Tic-Tac-Toe</a></li>
         </ul>
     </div>
 
@@ -174,7 +72,7 @@
             <li><a href="/privacy-policy/">Privacy Policy</a></li>
             <li><a href="/terms-of-service/">Terms of Service</a></li>
         </ul>
-        <p style="color: #72767d; font-size: 0.9em; margin-top: 15px;">&copy; 2026 PlayCord</p>
+        <p class="copyright">&copy; 2026 PlayCord</p>
     </div>
 </body>
 </html>
