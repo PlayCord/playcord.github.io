@@ -9,6 +9,11 @@
       "href": "https://discord.com/oauth2/authorize?client_id=1299404261070737498"
     },
     {
+      "text": "GitHub",
+      "href": "https://github.com/quantumbagel/playcord",
+      "style": "white"
+    },
+    {
       "text": "API Docs",
       "href": "docs"
     }

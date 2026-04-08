@@ -163,7 +163,8 @@ def main() -> int:
             print(f"pdoc generation failed: {exc}", file=sys.stderr)
             return 1
 
-    content_changed = update_content_json(content_json, version=version, api_href="API")
+    # Set API docs href to the 'docs' directory on the site (was previously "API")
+    content_changed = update_content_json(content_json, version=version, api_href="docs")
     print(f"Updated {content_json.name}: {'yes' if content_changed else 'no changes'}")
 
     try:
