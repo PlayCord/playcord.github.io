@@ -1,6 +1,6 @@
 {
   "title": "PlayCord",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "subtitle": "Turn-based games, on Discord",
   "pfp": "pfp.jpg",
   "top_buttons": [
@@ -10,7 +10,7 @@
     },
     {
       "text": "API Docs",
-      "href": "https://playcord.github.io/docs"
+      "href": "API"
     }
   ],
   "description": [
